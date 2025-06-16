@@ -1,41 +1,96 @@
+Here is your full `README.md` file content, ready to copy-paste directly or save as a file:
+
+---
+
+### 📄 `README.md`
+
+````markdown
 # 📧 AI Email Automation
 
-This project fetches recent Gmail emails, summarizes them using GPT-4o via OpenRouter, and writes the results to a Google Sheet.
+This project reads recent Gmail emails, summarizes them using AI (via OpenRouter), and logs the results into a Google Sheet.
+
+---
 
 ## 🔧 Setup
 
-1. Clone the repo:
+1. **Install dependencies**
+
    ```bash
-   git clone https://github.com/your-username/ai-email-automation.git
-   cd ai-email-automation
-2.Install requirements:
+   pip install -r requirements.txt
+````
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
+2. **Create a `.env` file**
 
-3.Create a .env file:
+   Inside your project root:
 
-ini
-Copy
-Edit
-OPENROUTER_API_KEY=your_api_key_here
+   ```
+   OPENROUTER_API_KEY=your_api_key_here
+   ```
 
-4.Place your credentials:
+3. **Add credentials**
 
-credentials/credentials.json – Gmail OAuth2 credentials
+   Place your credential files as follows:
 
-credentials/service_account.json – Google Sheets service account
+   ```
+   credentials/
+   ├── credentials.json          # Gmail OAuth2 credentials
+   └── service_account.json      # Google Sheets service account
+   ```
 
-Run :- 
+4. **Make sure `.gitignore` includes:**
+
+   ```
+   .env
+   credentials/
+   ```
+
+---
+
+## 🚀 Run
+
+To start the automation:
+
+```bash
 python main.py
+```
 
+---
+
+## 📁 Project Structure
+
+```
 ai-email-automation/
-├── credentials/
-├── .env
-├── main.py
-├── email_auth.py
-├── gmail_fetcher.py
-├── summarizer.py
-├── sheets_writer.py
+├── credentials/                # Private credentials folder
+│   ├── credentials.json
+│   └── service_account.json
+├── .env                        # API key for OpenRouter
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── main.py                     # Main runner script
+├── email_auth.py               # Gmail OAuth2 handler
+├── gmail_fetcher.py            # Fetch unread emails
+├── summarizer.py               # AI summarization logic
+├── sheets_writer.py            # Write summaries to Google Sheets
+```
+
+---
+
+## 📬 Output
+
+* Emails are fetched from your Gmail inbox.
+* Summaries are generated using GPT-4o via OpenRouter.
+* Summaries are logged into a Google Sheet using your service account.
+
+---
+
+## 🛡️ Warning
+
+Never upload `.env` or files in `credentials/` to GitHub. These contain sensitive keys.
+
+---
+
+```
+
+Let me know if you want a markdown badge version or advanced formatting.
+```
